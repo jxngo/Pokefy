@@ -3,7 +3,8 @@ import Home from './Home.js';
 import SelectOptions from "../components/Options.js";
 import { timeRangeFilters } from "../constants/filter.js";
 import { getTopArtists } from "../helper/spotify.js";
-import PokemonTeam  from "../components/DisplayModal.js"
+import PokemonTeam  from "../components/DisplayModal.js";
+import Ivysaur from "../assets/images/ivysaur_icon.png";
 
 export default class ArtistTypes extends React.Component {
     constructor() {
@@ -65,18 +66,24 @@ export default class ArtistTypes extends React.Component {
         else {
             return (
                 <div>
+                    <div className="selectionheader">
                     <h1>Select your team!</h1>
+                    <h2>Select from one of the following timelines to discover your top Spotify Artists and Pokemon.</h2>
+                    </div>
                     {/* Displays the time range buttons */}
-                    {Object.keys(timeRangeFilters).map(key => {
-                        return <SelectOptions
-                            key={key}
-                            value={key}
-                            clickHandler={this.handleClick}
-                        >
-                            {timeRangeFilters[key]}
-                        </SelectOptions>
-                    })
-                    }
+                    <div className='timerangediv'>
+                        {Object.keys(timeRangeFilters).map(key => {
+                            return <SelectOptions
+                                key={key}
+                                value={key}
+                                clickHandler={this.handleClick}
+                            >
+                                {timeRangeFilters[key]}
+                            </SelectOptions>
+                        })
+                        }
+                    </div>
+                    
                     {
                         displayModal ?
                             <div>
@@ -86,6 +93,9 @@ export default class ArtistTypes extends React.Component {
                             :
                             null
                     }
+                    <div className='ivysaurimg'>
+                        <img src={Ivysaur} alt="Ivysaur"></img>
+                    </div>
                 </div>
             )
         }

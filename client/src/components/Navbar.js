@@ -31,7 +31,7 @@ function NavBar({ loggedIn }) {
         <li>
           <Link to="/about">About</Link>
         </li>
-        {loggedIn ? <button onClick={handleLogout}>Log Out</button> : null}
+        {loggedIn ? <li><button className="logout-button" onClick={handleLogout}>Log Out</button></li> : null}
       </ul>
     </nav>
   );

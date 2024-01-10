@@ -69,7 +69,7 @@ export const genreTypes = {
     "soul": "Psychic",
     "k-pop boy group": "Fairy",
     "latin arena pop": "Fire",
-    "chicago rap": "Electric",
+    "chicago rap": "Ghost",
     "italian pop": "Water",
     "heartland rock": "Rock",
     "modern country pop": "Ground",
