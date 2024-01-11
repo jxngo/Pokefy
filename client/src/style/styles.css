@@ -27,7 +27,7 @@ nav {
 }
 
 .pokify-logo {
-  height:8rem;
+  height:6rem;
 }
 
 nav ul {
@@ -53,8 +53,8 @@ nav li a:hover {
 h1 {
   font-family: "Press Start 2P", monospace, sans-serif;
   font-weight: 400;
-  font-size: 1.6em;
-  line-height: 2em;
+  font-size: 2.125em;
+  line-height: 3em;
   color: white;
   -webkit-text-stroke: 1px black;
   margin: auto;
@@ -65,7 +65,7 @@ h2 {
   font-family: "Fira Mono", sans-serif;
   font-weight: 700;
   font-size: 1em;
-  line-height: 2em;
+  line-height: 1.75em;
   color: #fefefe;
 }
 
@@ -89,7 +89,8 @@ p {
   justify-content: center;
   margin: auto;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
+  
 }
 .hero h1 {
   margin: 0;
@@ -181,8 +182,10 @@ p {
   .ivysaurimg {
     position: absolute;
     left: 5rem;
-    bottom: 6rem;
+    bottom: 8rem;
+    
   }
+  
 }
 
 .options {
@@ -258,4 +261,106 @@ p {
 
 .ivysaurimg img {
   height: 20rem;
+  visibility: hidden;
+}
+
+
+
+.pokemonteamcontainer {
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+
+  button {
+    max-width: 5%;
+  }
+}
+
+.pokemonteam {
+  background-color: #1e1e1e;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 236px auto;
+  grid-template-rows: 248px 248px auto;
+  
+   h1 {
+    font-size: 0.8rem;
+    width: fit-content;
+    -webkit-text-stroke: 0px;
+    text-shadow: 0px 0px 3px #fefefe81;
+    letter-spacing: 1px;
+   }
+
+   div {
+    border: 2px solid red;
+    height: 281px;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   img {
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    box-shadow: 0px 3px 10px #1e1e1e;
+   }
+}
+
+/*about page*/
+
+.aboutHeader {
+  width: 90%;
+  margin: auto;
+
+  h1 {
+    line-height: 0em;
+    font-size: 2.125em;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  h2 {
+    text-align: left;
+  }
+}
+
+
+.smallProfile {
+  text-align: center;
+
+  img {
+    margin: 30px 0px 10px 0px;
+  }
+
+  h5 {
+    margin: 2px;
+    color: #1e1e1e;
+    font-family: "Press Start 2P", sans-serif;
+
+  }
+
+  h6 {
+    margin: 2px;
+    color: #1e1e1e;
+  }
+}
+
+.smallProfile:hover {
+  color: #fefefe;
+}
+
+.greyimg {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  transition: 0.2s;
+}
+
+.greyimg:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
 }

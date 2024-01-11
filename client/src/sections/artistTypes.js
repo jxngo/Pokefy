@@ -6,6 +6,7 @@ import { getTopArtists } from "../helper/spotify.js";
 import PokemonTeam  from "../components/DisplayModal.js";
 import Ivysaur from "../assets/images/ivysaur_icon.png";
 
+
 export default class ArtistTypes extends React.Component {
     constructor() {
         super();
@@ -26,7 +27,6 @@ export default class ArtistTypes extends React.Component {
     }
 
     onClose () {
-        console.log("HeI")
         this.setState({displayModal: false});
     }
 
@@ -83,10 +83,9 @@ export default class ArtistTypes extends React.Component {
                         })
                         }
                     </div>
-                    
                     {
                         displayModal ?
-                            <div>
+                            <div className='pokemonteamcontainer'>
                                 <PokemonTeam artistsInfo={artistsInfo}/>
                                 <button onClick={this.onClose}>CLOSE</button>
                             </div>
@@ -96,6 +95,7 @@ export default class ArtistTypes extends React.Component {
                     <div className='ivysaurimg'>
                         <img src={Ivysaur} alt="Ivysaur"></img>
                     </div>
+                    
                 </div>
             )
         }
