@@ -61,9 +61,10 @@ export default class ArtistTypes extends React.Component {
 
         const { token } = this.props;
         // If we don't have a token, return to home
-        if (token.token === '') { return <Home /> }
+        if (token.token === undefined || token.token === '') { return <Home /> }
         // Proceed to ArtistTypes
         else {
+            console.log(token.token);
             return (
                 <div>
                     <div className="selectionheader">

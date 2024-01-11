@@ -267,7 +267,6 @@ p {
 
 
 .pokemonteamcontainer {
-  border: 2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,6 +284,7 @@ p {
   grid-gap: 2rem;
   grid-template-columns: 236px auto;
   grid-template-rows: 248px 248px auto;
+  position: relative;
   
    h1 {
     font-size: 0.8rem;
@@ -293,21 +293,35 @@ p {
     text-shadow: 0px 0px 3px #fefefe81;
     letter-spacing: 1px;
    }
+   h2 {
+    font-size: 0.7rem;
+    font-family: "Press Start 2P", monospace, sans-serif;
+    width: fit-content;
+    -webkit-text-stroke: 0px;
+    text-shadow: 0px 0px 3px #fefefe81;
+    letter-spacing: 1px;
+   }
 
    div {
-    border: 2px solid red;
     height: 281px;
+    /*539px 561px */
     width: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #fefefe;
    }
 
-   img {
+   .artistimg{
     height: 150px;
     width: 150px;
     border-radius: 100px;
     box-shadow: 0px 3px 10px #1e1e1e;
+    margin: 20px 0 25px 0;
+  }
+   .pokeimg {
+    height: 281px;    
+    position: absolute;
    }
 }
 
@@ -318,20 +332,27 @@ p {
   margin: auto;
 
   h1 {
-    line-height: 0em;
+    line-height: 1.5em;
     font-size: 2.125em;
     margin-top: 100px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
   }
   h2 {
     text-align: left;
+    font-weight: 400;
   }
 }
 
+.smallProfilediv {
+  display: flex;
+}
 
 .smallProfile {
+  margin: auto;
   text-align: center;
+  height: auto;
+  max-width: 9em;
 
   img {
     margin: 30px 0px 10px 0px;
@@ -341,17 +362,21 @@ p {
     margin: 2px;
     color: #1e1e1e;
     font-family: "Press Start 2P", sans-serif;
-
+    transition: 0.2s;
   }
 
   h6 {
     margin: 2px;
     color: #1e1e1e;
+    transition: 0.2s;
   }
+
 }
 
 .smallProfile:hover {
-  color: #fefefe;
+  h5, h6 {
+    color: #fefefe;
+  }
 }
 
 .greyimg {
@@ -363,4 +388,31 @@ p {
 .greyimg:hover {
   filter: none;
   -webkit-filter: grayscale(0);
+}
+
+.aboutLarge {
+  margin-top: 200px;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  h1 {
+    font-size: 1.75em;
+    line-height: 1em;
+  }
+  h2 {
+    color: #FDCC10;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 1em;
+    line-height: 1.15em;
+  }
+
+  img {
+    height: auto;
+    max-width: 90%;
+  }
+}
+
+.aboutText {
+  padding: 10px;
 }
