@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+
+
 import { genreTypes } from "../constants/pokemonTypes.js";
 import Bug from "../assets/modal/modal_group_bug.png";
 import Dark from "../assets/modal/modal_group_dark.png";
@@ -20,7 +23,6 @@ import Steel from "../assets/modal/modal_group_steel.png";
 import Water from "../assets/modal/modal_group_water.png";
 
 export default class PokemonTeam extends Component {
-
     // Function that adds the corresponding types to each artists
     pairGenreTypes(artistsInfo) {
         artistsInfo.forEach((artist) => {
@@ -53,14 +55,13 @@ export default class PokemonTeam extends Component {
             case "Rock": return "#B6A136";
             case "Ghost": return "#735797";
             case "Dragon": return "#6F35FC";
-            case "Dark": return "#705746";
+            case "Dark": return "#353839";
             case "Steel": return "#B7B7CE";
             case "Fairy": return "#D685AD";
             default: return "#white";
         }
     }
     setPokemonBackground(type) {
-        console.log("HELLO");
         switch (type) {
             case 'Normal': return Normal;
             case 'Fire': return Fire; 
@@ -90,10 +91,10 @@ export default class PokemonTeam extends Component {
         // artistsInfo contains genre, name, and img
         const { artistsInfo } = this.props;
         this.pairGenreTypes(artistsInfo);
-
         return (
-            <div className='pokemonteam'> 
+            <div id="poketeam" className='pokemonteam'> 
                 {
+                    
                     artistsInfo.map((artist) => {
                         return <div className='team' 
                             style={{backgroundColor: this.setBackgroundColor(artist.type)}}>

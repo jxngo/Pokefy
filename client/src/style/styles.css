@@ -1,7 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Press+Start+2P&display=swap");
+
+@media (min-width:768px) {
+  .timerangediv {
+    display: flex;
+    justify-content: center;
+  }
+
+  .options {
+    margin: 0 2em;
+  }
+}
+
+@media (min-width:1024px) {
+  nav {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .bulbasaurimg {
+    position: absolute;
+    right: 5rem;
+    bottom: 6rem;
+  }
+
+  .ivysaurimg {
+    position: absolute;
+    left: 5rem;
+    bottom: 8rem;
+
+  }
+
+}
 * {
   box-sizing: border-box;
 }
+
 html {
   margin: 0;
 }
@@ -22,22 +59,24 @@ nav {
 }
 
 .nav-logo {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
 .pokify-logo {
-  height:6rem;
+  height: 6rem;
 }
 
 nav ul {
   list-style-type: none;
   text-align: center;
 }
+
 nav li {
   display: inline-block;
   padding-right: 2rem;
 }
+
 nav li a {
   font-family: "Press Start 2P", monospace, sans-serif;
   font-weight: 400;
@@ -46,6 +85,7 @@ nav li a {
   color: white;
   transition: 0.3s;
 }
+
 nav li a:hover {
   color: yellow;
 }
@@ -90,34 +130,35 @@ p {
   margin: auto;
   align-items: center;
   margin-top: 5rem;
-  
+
+  h1 {
+    margin: 0;
+    text-align: center;
+
+  }
+
+  h2 {
+    color: white;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+  }
 }
-.hero h1 {
-  margin: 0;
-  text-align: center;
-  
-}
-.hero h2 {
-  color: white;
-  font-weight: 300;
-  margin: 0;
-  text-align: center;
-}
+
+
 
 .breathing {
   animation: breathing 3000ms infinite forwards;
   display: flex;
-   
   text-align: center;
   align-items: center;
-  
-  
 }
 
 @keyframes breathing {
   50% {
     transform: scaleX(1.05) scaleY(1.05);
   }
+
   100% {
     transform: scaleX(1) scaleY(1);
   }
@@ -138,12 +179,12 @@ p {
   text-decoration: none;
   max-width: 100%;
   align-items: center;
+  
+  img {
+    margin-right: 1.25em;
+  }
 }
 
-
-.spotify-button img {
-  margin-right: 1.25em;
-}
 
 .spotify-button:hover {
   background-color: #1e1e1e;
@@ -155,76 +196,41 @@ p {
   paint-order: stroke fill;
 }
 
-@media (min-width:768px) {
-  .timerangediv {
-    display: flex;
-    justify-content: center;
-  }
-  .options{
-    margin: 0 2em;
-  }
-}
-@media (min-width:1024px) {
-  nav {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-top: 2rem;
-  }
-  
-  .bulbasaurimg {
-    position: absolute;
-    right: 5rem;
-    bottom: 6rem;
-  }
-  .ivysaurimg {
-    position: absolute;
-    left: 5rem;
-    bottom: 8rem;
-    
-  }
-  
-}
-
 .options {
   display: flex;
   flex-direction: column;
+  img {
+    align-self: center;
+    height: 4.68rem;
+    width: auto;
+    margin-bottom: .5em;
+  }
+  a {
+    text-align: center;
+    margin-bottom: 3.125em;
+    text-decoration: none;
+    color: #fefefe;
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 2em;
   
-}
-
-.options img {
-  align-self: center;
-  height: 4.68rem;
-  width: auto;
-  margin-bottom: .5em;
-}
-
-.options a {
-  text-align: center;
-  margin-bottom: 3.125em;
-  text-decoration: none;
-  color: #fefefe;
-  font-family: "Press Start 2P", serif;
-  font-weight: 400;
-  font-size: 1em;
-  line-height: 2em;
-  
+  }
 }
 
 .selectionheader {
   text-align: center;
   margin-top: 6.25rem;
+
+  h2 {
+    text-align: center;
+    margin: 0 auto 50px;
+    color: #fefefe;
+    font-family: "Fira Mono", sans-serif;
+    font-weight: 400;
+  }
 }
 
-.selectionheader h2 {
-  text-align: center;
-  margin: 0 auto 50px;
-  color: #fefefe;
-  font-family: "Fira Mono", sans-serif;
-  font-weight: 400;
-}
 
 .logout-button {
   font-family: "Press Start 2P", monospace, sans-serif;
@@ -235,6 +241,7 @@ p {
   font-size: 1em;
   transition: 0.3s;
 }
+
 .logout-button:hover {
   color: yellow;
 }
@@ -242,8 +249,6 @@ p {
 .about-header {
   margin: 4em auto;
   text-align: center;
-
-
   h2 {
     width: 80%;
     margin: auto;
@@ -257,13 +262,12 @@ p {
 .ivysaurimg {
   display: flex;
   justify-content: center;
-}
 
-.ivysaurimg img {
-  height: 20rem;
-  visibility: hidden;
-}
+  img {
+    height: 20rem;
 
+  }
+}
 
 
 .pokemonteamcontainer {
@@ -271,59 +275,93 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   
 
   button {
-    max-width: 5%;
-  }
-}
-
-.pokemonteam {
-  background-color: #1e1e1e;
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: 236px auto;
-  grid-template-rows: 248px 248px auto;
-  position: relative;
-  
-   h1 {
-    font-size: 0.8rem;
-    width: fit-content;
-    -webkit-text-stroke: 0px;
-    text-shadow: 0px 0px 3px #fefefe81;
-    letter-spacing: 1px;
-   }
-   h2 {
-    font-size: 0.7rem;
+    max-width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #fefefe;
+    background-color: #1e1e1e;
+    border-style: hidden;
     font-family: "Press Start 2P", monospace, sans-serif;
-    width: fit-content;
-    -webkit-text-stroke: 0px;
-    text-shadow: 0px 0px 3px #fefefe81;
-    letter-spacing: 1px;
-   }
-
-   div {
-    height: 281px;
-    /*539px 561px */
-    width: 270px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #fefefe;
-   }
-
-   .artistimg{
-    height: 150px;
-    width: 150px;
-    border-radius: 100px;
-    box-shadow: 0px 3px 10px #1e1e1e;
-    margin: 20px 0 25px 0;
+    
   }
-   .pokeimg {
-    height: 281px;    
-    position: absolute;
-   }
+  .download {
+    margin-top: 1rem;
+    height: 2rem;
+    border: 2px solid #fefefe;
+  }
+  .close {
+    margin: 0 0 0.5rem 32rem;
+  }
+
+
+  .pokemonteam {
+    background-color: #1e1e1e;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 236px auto;
+    grid-template-rows: 248px 248px auto;
+    position: relative;
+
+    h1 {
+      font-size: 0.8rem;
+      width: 16rem;
+      -webkit-text-stroke: 0px;
+      text-shadow: 0px 0px 3px #fefefe81;
+      letter-spacing: 1px;
+      
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    h2 {
+      font-size: 0.7rem;
+      font-family: "Press Start 2P", monospace, sans-serif;
+      width: fit-content;
+      -webkit-text-stroke: 0px;
+      text-shadow: 0px 0px 3px #fefefe81;
+      letter-spacing: 1px;
+    }
+
+    div {
+      height: 281px;
+      /*539px 561px */
+      width: 270px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #fefefe;
+    }
+
+    .artistimg {
+      height: 150px;
+      width: 150px;
+      border-radius: 100px;
+      box-shadow: 0px 3px 10px #1e1e1e;
+      margin: 20px 0 25px 0;
+    }
+
+    .pokeimg {
+      height: 281px;
+      position: absolute;
+    }
+  }
 }
+
+
+
+
+
 
 /*about page*/
 
@@ -338,6 +376,7 @@ p {
     margin-bottom: 20px;
     text-align: center;
   }
+
   h2 {
     text-align: left;
     font-weight: 400;
@@ -374,7 +413,9 @@ p {
 }
 
 .smallProfile:hover {
-  h5, h6 {
+
+  h5,
+  h6 {
     color: #fefefe;
   }
 }
@@ -396,10 +437,12 @@ p {
   display: flex;
   text-align: center;
   align-items: center;
+
   h1 {
     font-size: 1.75em;
     line-height: 1em;
   }
+
   h2 {
     color: #FDCC10;
     font-family: 'Press Start 2P', sans-serif;

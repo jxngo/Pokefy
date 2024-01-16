@@ -1,5 +1,8 @@
 import React from 'react';
 import Home from './Home.js';
+import html2canvas from 'html2canvas';
+import FileSaver from 'file-saver';
+
 import SelectOptions from "../components/Options.js";
 import { timeRangeFilters } from "../constants/filter.js";
 import { getTopArtists } from "../helper/spotify.js";
@@ -18,18 +21,15 @@ export default class ArtistTypes extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.setTopArtists = this.setTopArtists.bind(this);
         this.onClose = this.onClose.bind(this);
+        this.getImage = this.getImage.bind(this);
     }
+
     handleClick(value) {
         this.setState({ timeRange: value, displayModal: true }, () => {
             this.setTopArtists(this.state.timeRange);
         });
         // once clicked we will take the value (timeframe) and make API call
     }
-
-    onClose () {
-        this.setState({displayModal: false});
-    }
-
     async setTopArtists(timeRange) {
         // Checks if we have the artists saved in cookies
         const cachedArtists = sessionStorage.getItem(`artists[${timeRange}]`);
@@ -53,6 +53,19 @@ export default class ArtistTypes extends React.Component {
         });
     }
 
+    async getImage() {
+        html2canvas(document.getElementById("poketeam"), {
+            useCORS: true
+        }).then(function(canvas) {
+            canvas.toBlob(function(blob) {
+                window.saveAs(blob, "yourpokify.png");
+            });
+        });
+        
+    }
+    onClose () {
+        this.setState({displayModal: false});
+    }
     render() {
         const {
             artistsInfo,
@@ -83,20 +96,21 @@ export default class ArtistTypes extends React.Component {
                             </SelectOptions>
                         })
                         }
+                        
+                    </div>
+                    <div className='ivysaurimg'>
+                        <img src={Ivysaur} alt="Ivysaur"></img>
                     </div>
                     {
                         displayModal ?
                             <div className='pokemonteamcontainer'>
+                                <button className='close'onClick={this.onClose}>X</button>
                                 <PokemonTeam artistsInfo={artistsInfo}/>
-                                <button onClick={this.onClose}>CLOSE</button>
+                                <button className='download' onClick={this.getImage}>DOWNLOAD</button>
                             </div>
                             :
                             null
                     }
-                    <div className='ivysaurimg'>
-                        <img src={Ivysaur} alt="Ivysaur"></img>
-                    </div>
-                    
                 </div>
             )
         }
